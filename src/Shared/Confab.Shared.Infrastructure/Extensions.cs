@@ -13,6 +13,7 @@ internal static class Extensions
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddSingleton<IClock, UtcClock>();
+        
         services.AddControllers()
             .ConfigureApplicationPartManager(manager =>
             {

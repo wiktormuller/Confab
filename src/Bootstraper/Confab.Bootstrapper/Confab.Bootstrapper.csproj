@@ -8,8 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Modules\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj" />
+      <ProjectReference Include="..\..\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj" />
+      <ProjectReference Include="..\..\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj" />
       <ProjectReference Include="..\..\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Confab.Modules.Conferences.Api">
+        <HintPath>bin\Debug\net6.0\Confab.Modules.Conferences.Api.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

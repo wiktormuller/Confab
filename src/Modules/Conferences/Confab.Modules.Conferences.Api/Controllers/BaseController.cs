@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Confab.Modules.Conferences.Api.Controllers;
 
-[Route(BasePath + "[controller]")]
 [ApiController]
+[Route(BasePath + "/[controller]")]
 internal class BaseController : ControllerBase
 {
     protected const string BasePath = "conferences-module";

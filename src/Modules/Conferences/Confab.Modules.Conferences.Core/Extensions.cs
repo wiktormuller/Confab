@@ -12,9 +12,13 @@ internal static class Extensions
     public static IServiceCollection AddCore(this IServiceCollection services)
     {
         services.AddSingleton<IHostRepository, InMemoryHostRepository>();
+        services.AddSingleton<IConferenceRepository, InMemoryConferenceRepository>();
+        
         services.AddSingleton<IConferenceDeletionPolicy, ConferenceDeletionPolicy>();
         services.AddSingleton<IHostDeletionPolicy, HostDeletionPolicy>();
+        
         services.AddScoped<IHostService, HostService>();
+        services.AddScoped<IConferenceService, ConferenceService>();
         
         return services; // Fluent
     }
