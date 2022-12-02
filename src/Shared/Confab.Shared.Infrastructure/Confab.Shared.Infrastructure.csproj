@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Humanizer" Version="2.14.1" />
+    </ItemGroup>
+
 </Project>

@@ -6,7 +6,7 @@ public class HostNotFoundException : ConfabException
 {
     public Guid Id { get; }
     
-    public HostNotFoundException(Guid id) : base("Host with Id: '{id}' was not found.")
+    public HostNotFoundException(Guid id) : base($"Host with Id: '{id}' was not found.")
     {
         Id = id;
     }
