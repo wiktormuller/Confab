@@ -6,5 +6,5 @@ internal class ConferenceDetailsDto : ConferenceDto
 {
     [Required]
     [StringLength(1000, MinimumLength = 3)]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }

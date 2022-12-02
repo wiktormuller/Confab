@@ -1,3 +1,31 @@
 @url = http://localhost:5222/conferences-module
+@hostId = acfba472-4e0b-4d08-8753-bf41d0753378
 
-GET {{url}}
+###
+GET {{url}}/home
+
+###
+POST {{url}}/hosts
+Content-Type: application/json
+
+{
+    "name": "Host #1",
+    "description": "Lorem ipsum"
+}
+
+###
+GET {{url}}/hosts
+
+###
+GET {{url}}/hosts/{{hostId}}
+
+###
+PUT {{url}}/hosts/{{hostId }}
+Content-Type: application/json
+
+{
+    "name": "Host #2"
+}
+
+###
+DELETE {{url}}/hosts/{{hostId}}

@@ -93,7 +93,7 @@ internal class ConferenceService : IConferenceService
             throw new ConferenceNotFoundException(id);
         }
 
-        if (await _conferenceDeletionPolicy.CanDeleteAsync(conference))
+        if (await _conferenceDeletionPolicy.CanDeleteAsync(conference) is false)
         {
             throw new CannotDeleteConferenceException(id);
         }
@@ -105,7 +105,7 @@ internal class ConferenceService : IConferenceService
         {
             Id = conference.Id,
             HostId = conference.HostId,
-            HostName = conference.Host.Name,
+            HostName = conference.Host?.Name,
             Name = conference.Name,
             Location = conference.Location,
             From = conference.From,

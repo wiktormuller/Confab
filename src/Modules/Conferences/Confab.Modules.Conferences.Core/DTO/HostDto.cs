@@ -11,5 +11,5 @@ public class HostDto
     public string Name { get; set; }
     
     [StringLength(1000, MinimumLength = 3)]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }
