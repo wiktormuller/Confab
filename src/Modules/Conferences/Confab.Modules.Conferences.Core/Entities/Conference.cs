@@ -3,7 +3,7 @@ namespace Confab.Modules.Conferences.Core.Entities;
 public class Conference
 {
     public Guid Id { get; set; }
-    public Guid HostId { get; set; }
+    public Guid HostId { get; set; } // Will be mapped implicitly to foreign host id
     public Host Host { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
