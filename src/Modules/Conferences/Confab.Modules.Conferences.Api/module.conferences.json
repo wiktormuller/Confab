@@ -1,0 +1,8 @@
+{
+  "conferences": {
+    "module": {
+      "name": "conferences",
+      "enabled": false
+    }
+  }
+}

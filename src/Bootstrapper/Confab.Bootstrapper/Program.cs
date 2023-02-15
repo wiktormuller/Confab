@@ -2,13 +2,16 @@ using System.Reflection;
 using Confab.Bootstrapper;
 using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure;
-
-IList<Assembly> _assemblies = ModuleLoader.LoadAssemblies();
-IList<IModule> _modules = ModuleLoader.LoadModules(_assemblies);
+using Confab.Shared.Infrastructure.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddInfrastructure();
+builder.Host.ConfigureModules();
+
+IList<Assembly> _assemblies = ModuleLoader.LoadAssemblies(builder.Configuration);
+IList<IModule> _modules = ModuleLoader.LoadModules(_assemblies);
+
+builder.Services.AddInfrastructure(_assemblies, _modules);
 
 foreach (var module in _modules)
 {

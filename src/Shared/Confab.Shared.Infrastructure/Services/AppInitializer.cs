@@ -25,7 +25,12 @@ internal class AppInitializer : IHostedService
         using var scope = _serviceProvider.CreateScope();
         foreach (var dbContextType in dbContextTypes)
         {
-            var dbContext = scope.ServiceProvider.GetRequiredService(dbContextType) as DbContext;
+            var dbContext = scope.ServiceProvider.GetService(dbContextType) as DbContext;
+            if (dbContext is null)
+            {
+                continue;
+            }
+            
             await dbContext.Database.MigrateAsync(cancellationToken);
         }
     }
