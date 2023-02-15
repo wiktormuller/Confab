@@ -4,12 +4,11 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>Confab.Bootstraper</RootNamespace>
+        <RootNamespace>Confab.Bootstrapper</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj" />
-      <ProjectReference Include="..\..\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj" />
       <ProjectReference Include="..\..\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj" />
     </ItemGroup>
 

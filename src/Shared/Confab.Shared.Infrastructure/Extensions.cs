@@ -34,12 +34,7 @@ internal static class Extensions
     {
         app.UseErrorHandling();
         app.UseRouting();
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-            endpoints.MapGet("/", () => "Confab API!");
-        });
-        
+
         return app;
     }
 

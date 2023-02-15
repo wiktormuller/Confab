@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Confab.Bootstraper": {
+    "Confab.Bootstrapper": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
