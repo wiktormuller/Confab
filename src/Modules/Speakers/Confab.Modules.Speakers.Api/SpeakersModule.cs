@@ -1,16 +1,16 @@
-using Confab.Modules.Conferences.Core;
+using Confab.Modules.Speakers.Core;
 using Confab.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Confab.Modules.Conferences.Api;
+namespace Confab.Modules.Speakers.Api;
 
-internal class ConferencesModule : IModule
+internal class SpeakersModule : IModule
 {
-    public const string BasePath = "conferences-module";
-    public string Name { get; } = "Conferences";
-    public string Path => BasePath;
+    public const string BasePath = "speakers-module";
     
+    public string Name { get; } = "Speakers";
+    public string Path => BasePath;
     public void Register(IServiceCollection services)
     {
         services.AddCore();

@@ -1,7 +1,7 @@
 {
-  "conferences": {
+  "speakers": {
     "module": {
-      "name": "conferences",
+      "name": "Speakers",
       "enabled": true
     }
   }
