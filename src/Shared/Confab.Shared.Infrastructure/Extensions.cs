@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using Confab.Shared.Abstractions;
 using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure.Api;
+using Confab.Shared.Infrastructure.Auth;
 using Confab.Shared.Infrastructure.Exceptions;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
@@ -39,6 +40,8 @@ internal static class Extensions
         
         services.AddErrorHandling();
         
+        services.AddAuth(modules);
+        
         services.AddSingleton<IClock, UtcClock>();
         services.AddHostedService<AppInitializer>(); // Will ApplyMigrations for every known DbContext in solution automatically when application starts
         
@@ -69,7 +72,9 @@ internal static class Extensions
     public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
     {
         app.UseErrorHandling();
+        app.UseAuthentication();
         app.UseRouting();
+        app.UseAuthentication();
 
         return app;
     }

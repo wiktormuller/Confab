@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Confab.Modules.Speakers.Api.Controllers;
 
+[Authorize(Policy = POLICY)]
 internal class SpeakersController : BaseController
 {
+    private const string POLICY = "speakers";
     private readonly ISpeakersService _speakersService;
     private readonly IContext _context;
 
@@ -26,7 +28,6 @@ internal class SpeakersController : BaseController
     public async Task<ActionResult<IEnumerable<SpeakerDto>>> Get() => Ok(await _speakersService.BrowserAsync());
 
     [HttpPost]
-    [Authorize]
     public async Task<ActionResult> Post(SpeakerDto speaker)
     {
         speaker.Id = _context.Identity.Id;
@@ -35,7 +36,6 @@ internal class SpeakersController : BaseController
     }
 
     [HttpPut("{id:guid}")]
-    [Authorize]
     public async Task<ActionResult> Put(SpeakerDto speaker)
     {
         speaker.Id = _context.Identity.Id;

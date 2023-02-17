@@ -11,6 +11,9 @@ internal class UsersModule : IModule
 
     public string Name { get; } = "Users";
     public string Path => BasePath;
+
+    public IEnumerable<string> Policies { get; } = new[] { "users" };
+    
     public void Register(IServiceCollection services)
     {
         services.AddCore();
