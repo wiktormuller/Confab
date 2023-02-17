@@ -1,22 +1,29 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Confab.Shared.Abstractions;
+using Confab.Shared.Abstractions.Contexts;
 using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure.Api;
 using Confab.Shared.Infrastructure.Auth;
+using Confab.Shared.Infrastructure.Contexts;
 using Confab.Shared.Infrastructure.Exceptions;
+using Confab.Shared.Infrastructure.Modules;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 [assembly: InternalsVisibleTo("Confab.Bootstrapper")]
 namespace Confab.Shared.Infrastructure;
 
 internal static class Extensions
 {
+    private const string CorsPolicy = "cors";
+    
     public static IServiceCollection AddInfrastructure(this IServiceCollection services,
         IList<Assembly> assemblies, IList<IModule> modules)
     {
@@ -39,8 +46,33 @@ internal static class Extensions
         }
         
         services.AddErrorHandling();
+
+        services.AddCors(cors =>
+        {
+            cors.AddPolicy(CorsPolicy, x =>
+            {
+                x.WithOrigins("*")
+                    .WithHeaders("Content-Type", "Authorization")
+                    .WithMethods("POST", "PUT", "DELETE");
+            });
+        });
+
+        services
+            .AddSwaggerGen(swagger =>
+            {
+                swagger.CustomSchemaIds(x => x.FullName); // It's required, because there may be the same types in two different modules
+                swagger.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Confab API",
+                    Version = "v1"
+                });
+            });
         
         services.AddAuth(modules);
+        services.AddModuleInfo(modules);
+        services.AddSingleton<IContextFactory, ContextFactory>();
+        services.AddTransient<IContext>(sp => sp.GetRequiredService<IContextFactory>().Create());
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         
         services.AddSingleton<IClock, UtcClock>();
         services.AddHostedService<AppInitializer>(); // Will ApplyMigrations for every known DbContext in solution automatically when application starts
@@ -71,7 +103,16 @@ internal static class Extensions
 
     public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
     {
+        app.UseCors(CorsPolicy);
         app.UseErrorHandling();
+        app.UseSwagger();
+        //app.UseSwaggerUI();
+        app.UseReDoc(reDoc =>
+        {
+            reDoc.RoutePrefix = "docs";
+            reDoc.SpecUrl("/swagger/v1/swagger.json");
+            reDoc.DocumentTitle = "Confab API";
+        });
         app.UseAuthentication();
         app.UseRouting();
         app.UseAuthentication();

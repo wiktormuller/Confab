@@ -18,15 +18,22 @@ internal class ConferencesController : BaseController
 
     [HttpGet("{id:guid}")]
     [AllowAnonymous]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
     public async Task<ActionResult<ConferenceDetailsDto>> Get(Guid id)
         => OkOrNotFound(await _conferenceService.GetAsync(id));
 
     [HttpGet]
     [AllowAnonymous]
+    [ProducesResponseType(200)]
     public async Task<ActionResult<IReadOnlyList<ConferenceDto>>> BrowserAsync()
         => Ok(await _conferenceService.BrowserAsync());
 
     [HttpPost]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public async Task<ActionResult> AddAsync(ConferenceDetailsDto dto)
     {
         await _conferenceService.AddAsync(dto);
@@ -34,6 +41,10 @@ internal class ConferencesController : BaseController
     }
 
     [HttpPut("{id:guid}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public async Task<ActionResult> UpdateAsync(Guid id, ConferenceDetailsDto dto)
     {
         dto.Id = id;
@@ -42,6 +53,10 @@ internal class ConferencesController : BaseController
     }
 
     [HttpDelete("{id:guid}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public async Task<ActionResult> DeleteAsync(Guid id)
     {
         await _conferenceService.DeleteAsync(id);

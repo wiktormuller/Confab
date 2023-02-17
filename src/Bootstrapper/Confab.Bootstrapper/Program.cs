@@ -35,6 +35,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
     endpoints.MapGet("/", () => "Confab API!");
+    endpoints.MapModuleInfo();
 });
 
 _assemblies.Clear();
