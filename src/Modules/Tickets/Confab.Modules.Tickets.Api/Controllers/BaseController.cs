@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Confab.Modules.Speakers.Api.Controllers;
+namespace Confab.Modules.Tickets.Api.Controllers;
 
 [ApiController]
-[Route(SpeakersModule.BasePath + "/[controller]")]
+[Route(TicketsModule.BasePath + "/[controller]")]
 internal abstract class BaseController : Controller
 {
     protected ActionResult<T> OkOrNotFound<T>(T model)
