@@ -5,6 +5,7 @@ using Confab.Modules.Conferences.Core.Exceptions;
 using Confab.Modules.Conferences.Core.Policies;
 using Confab.Modules.Conferences.Core.Repositories;
 using Confab.Shared.Abstractions.Events;
+using Confab.Shared.Abstractions.Messaging;
 using Confab.Shared.Abstractions.Modules;
 
 namespace Confab.Modules.Conferences.Core.Services;
@@ -14,19 +15,22 @@ internal class ConferenceService : IConferenceService
     private readonly IConferenceRepository _conferenceRepository;
     private readonly IHostRepository _hostRepository;
     private readonly IConferenceDeletionPolicy _conferenceDeletionPolicy;
-    private readonly IEventDispatcher _eventDispatcher;
-    private readonly IModuleClient _moduleClient;
+    private readonly IEventDispatcher _eventDispatcher; // V1
+    private readonly IModuleClient _moduleClient; // V2
+    private readonly IMessageBroker _messageBroker;
 
     public ConferenceService(IConferenceRepository conferenceRepository, IHostRepository hostRepository,
-        IConferenceDeletionPolicy conferenceDeletionPolicy, IEventDispatcher eventDispatcher, IModuleClient moduleClient)
+        IConferenceDeletionPolicy conferenceDeletionPolicy, 
+        IEventDispatcher eventDispatcher, IModuleClient moduleClient, IMessageBroker messageBroker)
     {
         _conferenceRepository = conferenceRepository;
         _hostRepository = hostRepository;
         _conferenceDeletionPolicy = conferenceDeletionPolicy;
         _eventDispatcher = eventDispatcher;
         _moduleClient = moduleClient;
+        _messageBroker = messageBroker;
     }
-    
+
     public async Task AddAsync(ConferenceDetailsDto dto)
     {
         if (await _hostRepository.GetAsync(dto.HostId) is null)
@@ -53,8 +57,11 @@ internal class ConferenceService : IConferenceService
 
         //await _eventDispatcher.PublishAsync(
         //    new ConferenceCreated(conference.Id, conference.Name, conference.ParticipantsLimit, conference.From, conference.To));
-        
-        await _moduleClient.PublishAsync(
+
+        //await _moduleClient.PublishAsync(
+        //    new ConferenceCreated(conference.Id, conference.Name, conference.ParticipantsLimit, conference.From, conference.To));
+
+        await _messageBroker.PublishAsync(
             new ConferenceCreated(conference.Id, conference.Name, conference.ParticipantsLimit, conference.From, conference.To));
     }
 

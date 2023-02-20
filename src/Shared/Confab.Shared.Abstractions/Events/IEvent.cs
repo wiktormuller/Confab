@@ -1,6 +1,8 @@
+using Confab.Shared.Abstractions.Messaging;
+
 namespace Confab.Shared.Abstractions.Events;
 
 // Marker
-public interface IEvent
+public interface IEvent : IMessage
 {
 }
