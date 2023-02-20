@@ -71,6 +71,7 @@ internal static class Extensions
         
         services.AddAuth(modules);
         services.AddModuleInfo(modules);
+        services.AddModuleRequest(assemblies);
         services.AddSingleton<IContextFactory, ContextFactory>();
         services.AddTransient<IContext>(sp => sp.GetRequiredService<IContextFactory>().Create());
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -116,7 +117,7 @@ internal static class Extensions
         });
         app.UseAuthentication();
         app.UseRouting();
-        app.UseAuthentication();
+        app.UseAuthorization();
 
         return app;
     }

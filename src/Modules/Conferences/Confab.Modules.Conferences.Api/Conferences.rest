@@ -1,12 +1,15 @@
 @url = http://localhost:5222/conferences-module
-@hostId = d448984f-2920-4959-9adf-47b8214a3b0b
-@conferenceId = 329caedf-2ee5-4279-98dd-e79190b9c182
+@hostId = f458ac8f-3e6b-423f-bbd8-cad25ed8e057
+@conferenceId = f458ac8f-3e6b-423f-bbd8-cad25ed8e057
+
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlMWQ1NTk1ZS0yMThjLTQwM2QtOTEzMi1jNjU0NGM4N2U2MzAiLCJ1bmlxdWVfbmFtZSI6ImUxZDU1OTVlLTIxOGMtNDAzZC05MTMyLWM2NTQ0Yzg3ZTYzMCIsImp0aSI6ImU1YjA0MDRlLTdkZDItNDg1Mi1hNDRmLTczMmVkODVmNTc2OSIsImlhdCI6IjE2NzY4ODQ2ODgwNjQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidGlja2V0cyIsInVzZXJzIl0sIm5iZiI6MTY3Njg4NDY4OCwiZXhwIjoxNjc2OTIwNjg4LCJpc3MiOiJjb25mYWIifQ.q7Pvp-YoLdrAfViHerIcr8v4fqC9VVOS3Cdl1htGfuY
 
 ###
 GET {{url}}/home
 
 ###
 POST {{url}}/hosts
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 {
@@ -34,6 +37,7 @@ DELETE {{url}}/hosts/{{hostId}}
 
 ###
 POST {{url}}/conferences
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 {
@@ -44,7 +48,7 @@ Content-Type: application/json
     "from": "2021-05-01",
     "to": "2021-05-02",
     "participantsLimit": 100,
-    "logoUrl": null
+    "logoUrl": "http://google.com"
 }
 
 ###
