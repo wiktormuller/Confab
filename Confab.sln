@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5EE86E8-27A9-47F4-8014-99AE62467BA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D8D55006-9A6B-4C28-9F32-76B5C92FD3A6}"
@@ -10,35 +13,45 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{70BC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E7F4C402-ABD8-4312-B90F-ED51B35E8E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Abstractions", "src\Shared\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{2A4B8329-AAB5-488C-9520-1AB42E8DC152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Abstractions", "src\Shared\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{2A4B8329-AAB5-488C-9520-1AB42E8DC152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Infrastructure", "src\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{7476879F-F83C-49CB-BFEB-AB464EF41A87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Infrastructure", "src\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{7476879F-F83C-49CB-BFEB-AB464EF41A87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conferences", "Conferences", "{02075CEF-A250-40B1-A83A-A3E22EB972C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Conferences.Api", "src\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj", "{1E119428-1C0D-4F48-9BF5-571580EFC190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Api", "src\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj", "{1E119428-1C0D-4F48-9BF5-571580EFC190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Conferences.Core", "src\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj", "{46E5B22E-FF2F-45AF-AA80-1C1685CE07BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Core", "src\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj", "{46E5B22E-FF2F-45AF-AA80-1C1685CE07BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Bootstrapper", "src\Bootstrapper\Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{ACB4A69C-CF0F-4BE4-B170-C360E696CD40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Bootstrapper", "src\Bootstrapper\Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{ACB4A69C-CF0F-4BE4-B170-C360E696CD40}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Speakers", "Speakers", "{FE79778A-0A7E-42E5-AF90-1F621FCFDF5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Speakers.Api", "src\Modules\Speakers\Confab.Modules.Speakers.Api\Confab.Modules.Speakers.Api.csproj", "{0A0D0C08-BFAA-40F7-8CED-56901FD11ADC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Api", "src\Modules\Speakers\Confab.Modules.Speakers.Api\Confab.Modules.Speakers.Api.csproj", "{0A0D0C08-BFAA-40F7-8CED-56901FD11ADC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Speakers.Core", "src\Modules\Speakers\Confab.Modules.Speakers.Core\Confab.Modules.Speakers.Core.csproj", "{286464A1-C3BE-4D3B-8548-59EDA7E45A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Core", "src\Modules\Speakers\Confab.Modules.Speakers.Core\Confab.Modules.Speakers.Core.csproj", "{286464A1-C3BE-4D3B-8548-59EDA7E45A80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{4A471D46-B810-485D-9A0E-DD29A694042C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Users.Api", "src\Modules\Users\Confab.Modules.Users.Api\Confab.Modules.Users.Api.csproj", "{3ECBCB93-1EB9-4C2B-895F-69008AAD1B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Users.Api", "src\Modules\Users\Confab.Modules.Users.Api\Confab.Modules.Users.Api.csproj", "{3ECBCB93-1EB9-4C2B-895F-69008AAD1B25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Users.Core", "src\Modules\Users\Confab.Modules.Users.Core\Confab.Modules.Users.Core.csproj", "{8022E554-4B91-4F97-992F-3E2523331199}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Users.Core", "src\Modules\Users\Confab.Modules.Users.Core\Confab.Modules.Users.Core.csproj", "{8022E554-4B91-4F97-992F-3E2523331199}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tickets", "Tickets", "{4BE9B097-FFEA-43FC-BA1C-790A6C66A0A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Tickets.Api", "src\Modules\Tickets\Confab.Modules.Tickets.Api\Confab.Modules.Tickets.Api.csproj", "{0B8589B1-5732-4F0D-8F8B-87E806205E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Tickets.Api", "src\Modules\Tickets\Confab.Modules.Tickets.Api\Confab.Modules.Tickets.Api.csproj", "{0B8589B1-5732-4F0D-8F8B-87E806205E75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Tickets.Core", "src\Modules\Tickets\Confab.Modules.Tickets.Core\Confab.Modules.Tickets.Core.csproj", "{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Tickets.Core", "src\Modules\Tickets\Confab.Modules.Tickets.Core\Confab.Modules.Tickets.Core.csproj", "{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Agendas", "Agendas", "{D75F2583-A3E6-452C-A839-F825B104E79E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Agendas.Api", "src\Modules\Agendas\Confab.Modules.Agendas.Api\Confab.Modules.Agendas.Api.csproj", "{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Agendas.Application", "src\Modules\Agendas\Confab.Modules.Agendas.Application\Confab.Modules.Agendas.Application.csproj", "{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Agendas.Domain", "src\Modules\Agendas\Confab.Modules.Agendas.Domain\Confab.Modules.Agendas.Domain.csproj", "{F75CF39E-B5F3-4D9D-84D5-D6375C054312}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Agendas.Infrastructure", "src\Modules\Agendas\Confab.Modules.Agendas.Infrastructure\Confab.Modules.Agendas.Infrastructure.csproj", "{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +103,25 @@ Global
 		{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75CF39E-B5F3-4D9D-84D5-D6375C054312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75CF39E-B5F3-4D9D-84D5-D6375C054312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75CF39E-B5F3-4D9D-84D5-D6375C054312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75CF39E-B5F3-4D9D-84D5-D6375C054312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{87ADAF5B-BD12-41D6-B10A-77C00C1DD22E} = {F5EE86E8-27A9-47F4-8014-99AE62467BA6}
@@ -110,5 +142,13 @@ Global
 		{4BE9B097-FFEA-43FC-BA1C-790A6C66A0A9} = {70BC7922-7EB7-4378-948F-8F0495542E40}
 		{0B8589B1-5732-4F0D-8F8B-87E806205E75} = {4BE9B097-FFEA-43FC-BA1C-790A6C66A0A9}
 		{E84F73E1-2B60-4F23-B1BD-0CE1CC1C6405} = {4BE9B097-FFEA-43FC-BA1C-790A6C66A0A9}
+		{D75F2583-A3E6-452C-A839-F825B104E79E} = {70BC7922-7EB7-4378-948F-8F0495542E40}
+		{D1DCE9A0-5FB4-4433-863F-67DCC0F874D6} = {D75F2583-A3E6-452C-A839-F825B104E79E}
+		{E9D420E1-8D71-4D8C-AA8D-B9D05F77D6D8} = {D75F2583-A3E6-452C-A839-F825B104E79E}
+		{F75CF39E-B5F3-4D9D-84D5-D6375C054312} = {D75F2583-A3E6-452C-A839-F825B104E79E}
+		{1F6DC7F4-D965-4275-ABAF-3D26BD7E4F0C} = {D75F2583-A3E6-452C-A839-F825B104E79E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7825DC7F-38DA-46F1-A4B3-2977D6D2F8CC}
 	EndGlobalSection
 EndGlobal

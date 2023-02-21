@@ -1,19 +1,24 @@
 using Confab.Modules.Speakers.Core.DTO;
+using Confab.Modules.Speakers.Core.Events;
 using Confab.Modules.Speakers.Core.Exceptions;
 using Confab.Modules.Speakers.Core.Mappings;
 using Confab.Modules.Speakers.Core.Repositories;
+using Confab.Shared.Abstractions.Messaging;
 
 namespace Confab.Modules.Speakers.Core.Services;
 
 internal class SpeakersService : ISpeakersService
 {
     private readonly ISpeakersRepository _speakersRepository;
-    
-    public SpeakersService(ISpeakersRepository speakersRepository)
+    private readonly IMessageBroker _messageBroker;
+
+    public SpeakersService(ISpeakersRepository speakersRepository, 
+        IMessageBroker messageBroker)
     {
         _speakersRepository = speakersRepository;
+        _messageBroker = messageBroker;
     }
-    
+
     public async Task<IEnumerable<SpeakerDto>> BrowserAsync()
     {
         var entities = await _speakersRepository.BrowseAsync();
@@ -35,6 +40,8 @@ internal class SpeakersService : ISpeakersService
         }
 
         await _speakersRepository.AddAsync(speakerDto.AsEntity());
+
+        await _messageBroker.PublishAsync(new SpeakerCreated(speakerDto.Id, speakerDto.FullName));
     }
 
     public async Task UpdateAsync(SpeakerDto speaker)
