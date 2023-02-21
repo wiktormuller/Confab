@@ -23,7 +23,7 @@ public abstract class TypeId : IEquatable<TypeId>
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
         if (obj.GetType() != this.GetType()) return false;
-        return Equals((AggregateId<T>)obj);
+        return Equals((TypeId)obj);
     }
 
     public override int GetHashCode()
@@ -49,7 +49,7 @@ public abstract class TypeId : IEquatable<TypeId>
 
     public static bool operator !=(TypeId a, TypeId b)
     {
-        return !(a == b));
+        return !(a == b);
     }
 
     public override string ToString() => Value.ToString();

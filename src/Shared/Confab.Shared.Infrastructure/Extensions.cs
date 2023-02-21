@@ -1,10 +1,11 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using Confab.Shared.Abstractions;
 using Confab.Shared.Abstractions.Contexts;
 using Confab.Shared.Abstractions.Modules;
+using Confab.Shared.Abstractions.Time;
 using Confab.Shared.Infrastructure.Api;
 using Confab.Shared.Infrastructure.Auth;
+using Confab.Shared.Infrastructure.Commands;
 using Confab.Shared.Infrastructure.Contexts;
 using Confab.Shared.Infrastructure.Events;
 using Confab.Shared.Infrastructure.Exceptions;
@@ -77,6 +78,7 @@ internal static class Extensions
         services.AddTransient<IContext>(sp => sp.GetRequiredService<IContextFactory>().Create());
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddEvents(assemblies);
+        services.AddCommands(assemblies);
         services.AddMessaging();
         services.AddSingleton<IClock, UtcClock>();
         services.AddHostedService<AppInitializer>(); // Will ApplyMigrations for every known DbContext in solution automatically when application starts

@@ -2,7 +2,7 @@ using Confab.Modules.Tickets.Core.DTO;
 using Confab.Modules.Tickets.Core.Entities;
 using Confab.Modules.Tickets.Core.Exceptions;
 using Confab.Modules.Tickets.Core.Repositories;
-using Confab.Shared.Abstractions;
+using Confab.Shared.Abstractions.Time;
 using Microsoft.Extensions.Logging;
 
 namespace Confab.Modules.Tickets.Core.Services;

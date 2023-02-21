@@ -3,8 +3,8 @@ using Confab.Modules.Users.Core.DTO;
 using Confab.Modules.Users.Core.Entities;
 using Confab.Modules.Users.Core.Exceptions;
 using Confab.Modules.Users.Core.Repositories;
-using Confab.Shared.Abstractions;
 using Confab.Shared.Abstractions.Auth;
+using Confab.Shared.Abstractions.Time;
 using Microsoft.AspNetCore.Identity;
 
 namespace Confab.Modules.Users.Core.Services;

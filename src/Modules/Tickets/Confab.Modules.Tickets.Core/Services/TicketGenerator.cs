@@ -1,5 +1,5 @@
 using Confab.Modules.Tickets.Core.Entities;
-using Confab.Shared.Abstractions;
+using Confab.Shared.Abstractions.Time;
 
 namespace Confab.Modules.Tickets.Core.Services;
 

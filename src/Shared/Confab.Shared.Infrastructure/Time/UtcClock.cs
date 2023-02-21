@@ -1,4 +1,4 @@
-using Confab.Shared.Abstractions;
+using Confab.Shared.Abstractions.Time;
 
 namespace Confab.Shared.Infrastructure.Time;
 

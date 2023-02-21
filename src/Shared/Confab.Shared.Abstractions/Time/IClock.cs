@@ -1,4 +1,4 @@
-namespace Confab.Shared.Abstractions;
+namespace Confab.Shared.Abstractions.Time;
 
 public interface IClock
 {
