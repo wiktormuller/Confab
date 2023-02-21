@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Confab.Shared.Infrastructure.Commands;
 
-internal sealed class CommandDispatcher : ICommandDispatcher
+internal sealed class CommandDispatcher : ICommandDispatcher // Thanks to dispatcher we don't have to register every handler manually.
 {
     private readonly IServiceProvider _serviceProvider;
 

@@ -11,6 +11,7 @@ using Confab.Shared.Infrastructure.Events;
 using Confab.Shared.Infrastructure.Exceptions;
 using Confab.Shared.Infrastructure.Messaging;
 using Confab.Shared.Infrastructure.Modules;
+using Confab.Shared.Infrastructure.Queries;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
@@ -79,6 +80,7 @@ internal static class Extensions
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddEvents(assemblies);
         services.AddCommands(assemblies);
+        services.AddQueries(assemblies);
         services.AddMessaging();
         services.AddSingleton<IClock, UtcClock>();
         services.AddHostedService<AppInitializer>(); // Will ApplyMigrations for every known DbContext in solution automatically when application starts
