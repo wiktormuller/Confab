@@ -21,6 +21,6 @@ public sealed class SpeakerCreatedHandler : IEventHandler<SpeakerCreated>
         }
 
         var speaker = new Speaker(@event.Id, @event.FullName);
-        await _speakerRepository.CreateAsync(speaker);
+        await _speakerRepository.AddAsync(speaker);
     }
 }

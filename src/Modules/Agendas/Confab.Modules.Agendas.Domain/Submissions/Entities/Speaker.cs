@@ -6,6 +6,9 @@ public class Speaker : AggregateRoot
 {
     public string FullName { get; init; }
 
+    private ICollection<Submission> _submissions; // Require by EF Core
+    public IEnumerable<Submission> Submissions => _submissions; // Require by EF Core
+
     public Speaker(AggregateId id, string fullName)
     {
         Id = id;

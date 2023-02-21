@@ -3,9 +3,9 @@ using Confab.Shared.Abstractions.Kernel.Types;
 
 namespace Confab.Modules.Agendas.Domain.Submissions.Repositories;
 
-public interface ISpeakerRepository
+public interface ISpeakerRepository // Port
 {
     Task<bool> ExistsAsync(AggregateId id);
     Task<IEnumerable<Speaker>> BrowseAsync(IEnumerable<AggregateId> ids);
-    Task CreateAsync(Speaker speaker);
+    Task AddAsync(Speaker speaker);
 }
