@@ -71,7 +71,7 @@ namespace Confab.Modules.Agendas.Domain.Submissions.Entities
         {
             if (string.IsNullOrWhiteSpace(description))
             {
-                throw new EmptySumbissionDescriptionException(Id);
+                throw new EmptySubmissionDescriptionException(Id);
             }
 
             Description = description;

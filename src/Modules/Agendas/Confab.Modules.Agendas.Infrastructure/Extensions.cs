@@ -1,4 +1,5 @@
-﻿using Confab.Modules.Agendas.Domain.Submissions.Repositories;
+﻿using Confab.Modules.Agendas.Domain.Agendas.Repositories;
+using Confab.Modules.Agendas.Domain.Submissions.Repositories;
 using Confab.Modules.Agendas.Infrastructure.EF;
 using Confab.Modules.Agendas.Infrastructure.EF.Repositories;
 using Confab.Shared.Infrastructure.Postgres;
@@ -12,5 +13,7 @@ public static class Extensions
         => services
             .AddScoped<ISpeakerRepository, SpeakerRepository>()
             .AddScoped<ISubmissionRepository, SubmissionRepository>()
-            .AddPostgres<AgendasDbContext>();
+            .AddPostgres<AgendasDbContext>()
+            .AddScoped<IAgendaItemsRepository, AgendaItemsRepository>()
+            .AddScoped<IAgendaTracksRepository, AgendaTracksRepository>();
 }
