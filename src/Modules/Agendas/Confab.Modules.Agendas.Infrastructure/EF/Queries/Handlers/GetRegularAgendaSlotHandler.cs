@@ -1,7 +1,7 @@
 ﻿using Confab.Modules.Agendas.Application.Agendas.DTO;
 using Confab.Modules.Agendas.Application.Agendas.Queries;
 using Confab.Modules.Agendas.Domain.Agendas.Entities;
-using Confab.Modules.Agendas.Infrastructure.Mappings;
+using Confab.Modules.Agendas.Infrastructure.EF.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace Confab.Modules.Agendas.Infrastructure.EF.Queries.Handlers;

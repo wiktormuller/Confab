@@ -1,5 +1,5 @@
 @url = http://localhost:5000/tickets-module
-@conferenceId = 00000000-0000-0000-0000-000000000000
+@conferenceId = 1d0f1de1-e141-4074-85a0-3c03bb922ab
 @accessToken = secret
 
 ###

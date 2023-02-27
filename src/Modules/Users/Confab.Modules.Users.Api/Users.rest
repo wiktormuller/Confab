@@ -1,5 +1,5 @@
 @url = http://localhost:5222/users-module
-@email = user1@confab.io
+@email = user2@confab.io
 @password = secret
 @role = user
 @accessToken = secret 

@@ -2,7 +2,7 @@
 using Confab.Modules.Agendas.Application.Agendas.Types;
 using Confab.Modules.Agendas.Domain.Agendas.Entities;
 
-namespace Confab.Modules.Agendas.Infrastructure.Mappings;
+namespace Confab.Modules.Agendas.Infrastructure.EF.Mappings;
 
 internal static class AgendasExtensions
 {
