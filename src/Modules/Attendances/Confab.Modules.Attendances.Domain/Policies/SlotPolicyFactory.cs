@@ -8,7 +8,7 @@ public class SlotPolicyFactory : ISlotPolicyFactory
         {
             { } when tags.Contains("stationary") => new RegularSlotPolicy(),
             { } when tags.Contains("workshop") => new RegularSlotPolicy(),
-            _ => new OverbookingSlotPolicy();
+            _ => new OverbookingSlotPolicy()
         };
     }
 }

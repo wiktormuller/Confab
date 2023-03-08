@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Confab.Modules.Attendances.Domain.Policies;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Confab.Modules.Attendances.Domain;
 

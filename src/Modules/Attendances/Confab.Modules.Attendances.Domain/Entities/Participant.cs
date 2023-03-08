@@ -1,4 +1,5 @@
-﻿using Confab.Modules.Attendances.Domain.Exceptions;
+﻿using Confab.Modules.Attendances.Domain.Events;
+using Confab.Modules.Attendances.Domain.Exceptions;
 using Confab.Modules.Attendances.Domain.Types;
 using Confab.Shared.Abstractions.Kernel.Types;
 
