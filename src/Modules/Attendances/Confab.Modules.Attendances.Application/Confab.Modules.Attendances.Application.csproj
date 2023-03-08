@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj" />
+    <ProjectReference Include="..\Confab.Modules.Attendances.Domain\Confab.Modules.Attendances.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

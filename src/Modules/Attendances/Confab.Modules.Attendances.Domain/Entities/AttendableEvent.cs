@@ -4,6 +4,7 @@ using Confab.Shared.Abstractions.Kernel.Types;
 
 namespace Confab.Modules.Attendances.Domain.Entities;
 
+// It's snapshot of 'AgendaItem' from agendas module
 public class AttendableEvent : AggregateRoot<AttendableEventId>
 {
     public ConferenceId ConferenceId { get; private set; }
