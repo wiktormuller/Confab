@@ -11,7 +11,8 @@ internal static class Extensions
         services.AddSingleton<ICommandDispatcher, CommandDispatcher>();
         services.Scan(s => s.FromAssemblies(assemblies) // With help of scrutor package register all command handlers
             .AddClasses(c => c
-                .AssignableTo(typeof(ICommandHandler<>)))
+                .AssignableTo(typeof(ICommandHandler<>))
+                .WithAttribute<DecoratorAttribute>())
             .AsImplementedInterfaces()
             .WithScopedLifetime());
 

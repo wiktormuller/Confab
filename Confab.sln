@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Api", "src\Modules\Attendances\Confab.Modules.Attendances.Api\Confab.Modules.Attendances.Api.csproj", "{176CB89E-1807-4BFC-A749-2390E0CEAFE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Infrastructure", "src\Modules\Attendances\Confab.Modules.Attendances.Infrastructure\Confab.Modules.Attendances.Infrastructure.csproj", "{E744A209-8D08-405F-9C65-D6A08BC0CBD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +177,7 @@ Global
 		{6E8AAC62-EAA1-4119-ACFD-E2A9B7447A28} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{3E756351-D99F-4AE8-B6E6-4D078238DEBF} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
+		{E744A209-8D08-405F-9C65-D6A08BC0CBD0} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7825DC7F-38DA-46F1-A4B3-2977D6D2F8CC}

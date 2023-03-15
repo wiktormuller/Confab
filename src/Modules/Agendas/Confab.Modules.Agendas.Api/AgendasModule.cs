@@ -4,6 +4,10 @@ using Confab.Modules.Agendas.Infrastructure;
 using Confab.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Confab.Shared.Abstractions.Queries;
+using Confab.Shared.Infrastructure.Modules;
+using Confab.Modules.Agendas.Application.Agendas.Queries;
+using Confab.Modules.Agendas.Application.Agendas.DTO;
 
 namespace Confab.Modules.Agendas.Api;
 
@@ -13,6 +17,11 @@ internal class AgendasModule : IModule
     public string Name { get; } = "Agendas";
 
     public string Path => BasePath;
+
+    public IEnumerable<string> Policies { get; } = new[]
+    {
+        "agendas", "cfp", "submissions"
+    };
 
     public void Register(IServiceCollection services)
     {
@@ -24,5 +33,10 @@ internal class AgendasModule : IModule
 
     public void Use(IApplicationBuilder app)
     {
+        app.UseModuleRequests()
+                .Subscribe<GetRegularAgendaSlot, RegularAgendaSlotDto>("agendas/slots/regular/get",
+                    (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query))
+                .Subscribe<GetAgenda, IEnumerable<AgendaTrackDto>>("agendas/agendas/get",
+                    (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query));
     }
 }

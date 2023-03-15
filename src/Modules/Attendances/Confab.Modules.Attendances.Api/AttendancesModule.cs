@@ -1,4 +1,7 @@
-﻿using Confab.Shared.Abstractions.Modules;
+﻿using Confab.Modules.Attendances.Application;
+using Confab.Modules.Attendances.Domain;
+using Confab.Modules.Attendances.Infrastructure;
+using Confab.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,10 +15,9 @@ internal class AttendancesModule : IModule
 
     public void Register(IServiceCollection services)
     {
-        // @TODO: 
-        //services.AddDomain()
-        //    .AddApplication()
-        //    .AddInfrastructure();
+        services.AddDomain()
+            .AddApplication()
+            .AddInfrastructure();
     }
 
     public void Use(IApplicationBuilder app)

@@ -11,7 +11,8 @@ internal static class Extensions
         services.AddSingleton<IQueryDispatcher, QueryDispatcher>();
         services.Scan(s => s.FromAssemblies(assemblies) // With help of scrutor package register all query handlers
             .AddClasses(c => c
-                .AssignableTo(typeof(IQueryHandler<,>)))
+                .AssignableTo(typeof(IQueryHandler<,>))
+                .WithAttribute<DecoratorAttribute>())
             .AsImplementedInterfaces()
             .WithScopedLifetime());
 

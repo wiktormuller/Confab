@@ -23,7 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj" />
-    <ProjectReference Include="..\Confab.Modules.Attendances.Application\Confab.Modules.Attendances.Application.csproj" />
+    <ProjectReference Include="..\Confab.Modules.Attendances.Infrastructure\Confab.Modules.Attendances.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
