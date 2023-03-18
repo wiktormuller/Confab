@@ -55,13 +55,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Agendas.Infr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attendances", "Attendances", "{4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Domain", "src\Modules\Attendances\Confab.Modules.Attendances.Domain\Confab.Modules.Attendances.Domain.csproj", "{6E8AAC62-EAA1-4119-ACFD-E2A9B7447A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Domain", "src\Modules\Attendances\Confab.Modules.Attendances.Domain\Confab.Modules.Attendances.Domain.csproj", "{6E8AAC62-EAA1-4119-ACFD-E2A9B7447A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Application", "src\Modules\Attendances\Confab.Modules.Attendances.Application\Confab.Modules.Attendances.Application.csproj", "{3E756351-D99F-4AE8-B6E6-4D078238DEBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Application", "src\Modules\Attendances\Confab.Modules.Attendances.Application\Confab.Modules.Attendances.Application.csproj", "{3E756351-D99F-4AE8-B6E6-4D078238DEBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Api", "src\Modules\Attendances\Confab.Modules.Attendances.Api\Confab.Modules.Attendances.Api.csproj", "{176CB89E-1807-4BFC-A749-2390E0CEAFE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Api", "src\Modules\Attendances\Confab.Modules.Attendances.Api\Confab.Modules.Attendances.Api.csproj", "{176CB89E-1807-4BFC-A749-2390E0CEAFE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Infrastructure", "src\Modules\Attendances\Confab.Modules.Attendances.Infrastructure\Confab.Modules.Attendances.Infrastructure.csproj", "{E744A209-8D08-405F-9C65-D6A08BC0CBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Infrastructure", "src\Modules\Attendances\Confab.Modules.Attendances.Infrastructure\Confab.Modules.Attendances.Infrastructure.csproj", "{E744A209-8D08-405F-9C65-D6A08BC0CBD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Tests.Unit", "tests\Modules\Attendances\Confab.Modules.Attendances.Tests.Unit\Confab.Modules.Attendances.Tests.Unit.csproj", "{445DD114-2C77-4359-8348-78D75BEF7215}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,10 @@ Global
 		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E744A209-8D08-405F-9C65-D6A08BC0CBD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445DD114-2C77-4359-8348-78D75BEF7215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445DD114-2C77-4359-8348-78D75BEF7215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445DD114-2C77-4359-8348-78D75BEF7215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445DD114-2C77-4359-8348-78D75BEF7215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,6 +184,7 @@ Global
 		{3E756351-D99F-4AE8-B6E6-4D078238DEBF} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{E744A209-8D08-405F-9C65-D6A08BC0CBD0} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
+		{445DD114-2C77-4359-8348-78D75BEF7215} = {D8D55006-9A6B-4C28-9F32-76B5C92FD3A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7825DC7F-38DA-46F1-A4B3-2977D6D2F8CC}
