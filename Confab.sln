@@ -63,7 +63,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Infrastructure", "src\Modules\Attendances\Confab.Modules.Attendances.Infrastructure\Confab.Modules.Attendances.Infrastructure.csproj", "{E744A209-8D08-405F-9C65-D6A08BC0CBD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Tests.Unit", "tests\Modules\Attendances\Confab.Modules.Attendances.Tests.Unit\Confab.Modules.Attendances.Tests.Unit.csproj", "{445DD114-2C77-4359-8348-78D75BEF7215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Attendances.Tests.Unit", "tests\Modules\Attendances\Confab.Modules.Attendances.Tests.Unit\Confab.Modules.Attendances.Tests.Unit.csproj", "{445DD114-2C77-4359-8348-78D75BEF7215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Attendances.Tests.Integration", "tests\Modules\Attendances\Confab.Modules.Attendances.Tests.Integration\Confab.Modules.Attendances.Tests.Integration.csproj", "{2A44710C-07D1-42B3-BBB1-66018DCA8795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Tests", "src\Shared\Confab.Shared.Tests\Confab.Shared.Tests.csproj", "{45420051-1E4B-4FD6-AF25-B309E03C7730}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +155,14 @@ Global
 		{445DD114-2C77-4359-8348-78D75BEF7215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{445DD114-2C77-4359-8348-78D75BEF7215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{445DD114-2C77-4359-8348-78D75BEF7215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A44710C-07D1-42B3-BBB1-66018DCA8795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A44710C-07D1-42B3-BBB1-66018DCA8795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A44710C-07D1-42B3-BBB1-66018DCA8795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A44710C-07D1-42B3-BBB1-66018DCA8795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45420051-1E4B-4FD6-AF25-B309E03C7730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45420051-1E4B-4FD6-AF25-B309E03C7730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45420051-1E4B-4FD6-AF25-B309E03C7730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45420051-1E4B-4FD6-AF25-B309E03C7730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +197,8 @@ Global
 		{176CB89E-1807-4BFC-A749-2390E0CEAFE5} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{E744A209-8D08-405F-9C65-D6A08BC0CBD0} = {4CACE6F0-06D5-428E-A0BA-74F2D6F3D5A1}
 		{445DD114-2C77-4359-8348-78D75BEF7215} = {D8D55006-9A6B-4C28-9F32-76B5C92FD3A6}
+		{2A44710C-07D1-42B3-BBB1-66018DCA8795} = {D8D55006-9A6B-4C28-9F32-76B5C92FD3A6}
+		{45420051-1E4B-4FD6-AF25-B309E03C7730} = {E7F4C402-ABD8-4312-B90F-ED51B35E8E7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7825DC7F-38DA-46F1-A4B3-2977D6D2F8CC}

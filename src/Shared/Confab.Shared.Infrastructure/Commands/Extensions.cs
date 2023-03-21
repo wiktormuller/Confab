@@ -12,7 +12,7 @@ internal static class Extensions
         services.Scan(s => s.FromAssemblies(assemblies) // With help of scrutor package register all command handlers
             .AddClasses(c => c
                 .AssignableTo(typeof(ICommandHandler<>))
-                .WithAttribute<DecoratorAttribute>())
+                .WithoutAttribute<DecoratorAttribute>())
             .AsImplementedInterfaces()
             .WithScopedLifetime());
 

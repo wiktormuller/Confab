@@ -3,6 +3,7 @@ using System;
 using Confab.Modules.Attendances.Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Confab.Modules.Attendances.Infrastructure.EF.Migrations
 {
     [DbContext(typeof(AttendancesDbContext))]
-    partial class AttendancesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230321211543_Attendaces_FixConstraints")]
+    partial class AttendacesFixConstraints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

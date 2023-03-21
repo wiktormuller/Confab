@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Confab.Modules.Tickets.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60565;http://localhost:60573"
+    }
+  }
+}

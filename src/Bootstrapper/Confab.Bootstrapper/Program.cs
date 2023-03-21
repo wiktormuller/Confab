@@ -42,3 +42,5 @@ _assemblies.Clear();
 _modules.Clear();
 
 app.Run();
+
+public partial class Program { } // Required by 'WebApplicationFactory' for integration testing

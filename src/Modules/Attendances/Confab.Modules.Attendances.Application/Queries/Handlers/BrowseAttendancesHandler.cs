@@ -11,6 +11,12 @@ internal sealed class BrowseAttendancesHandler : IQueryHandler<BrowseAttendances
     private readonly IParticipantsRepository _participantsRepository;
     private readonly IAgendasApiClient _agendasApiClient;
 
+    public BrowseAttendancesHandler(IParticipantsRepository participantsRepository, IAgendasApiClient agendasApiClient)
+    {
+        _participantsRepository = participantsRepository;
+        _agendasApiClient = agendasApiClient;
+    }
+
     public async Task<IReadOnlyList<AttendanceDto>> HandleAsync(BrowseAttendances query)
     {
         var participant = await _participantsRepository.GetAsync(query.ConferenceId, query.UserId);

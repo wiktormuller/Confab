@@ -5,7 +5,7 @@ namespace Confab.Modules.Attendances.Domain.Entities;
 public class Slot
 {
     public SlotId Id { get; }
-    public ParticipantId ParticipantId { get; private set; }
+    public ParticipantId? ParticipantId { get; private set; }
     public bool IsFree => ParticipantId is null;
 
     private Slot() { }
