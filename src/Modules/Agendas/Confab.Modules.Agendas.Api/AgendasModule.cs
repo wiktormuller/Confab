@@ -34,9 +34,9 @@ internal class AgendasModule : IModule
     public void Use(IApplicationBuilder app)
     {
         app.UseModuleRequests()
-                .Subscribe<GetRegularAgendaSlot, RegularAgendaSlotDto>("agendas/slots/regular/get",
-                    (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query))
-                .Subscribe<GetAgenda, IEnumerable<AgendaTrackDto>>("agendas/agendas/get",
-                    (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query));
+           .Subscribe<GetRegularAgendaSlot, RegularAgendaSlotDto>("agendas/slots/regular/get",
+                (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query))
+            .Subscribe<GetAgenda, IEnumerable<AgendaTrackDto>>("agendas/agendas/get",
+                (query, sp) => sp.GetRequiredService<IQueryDispatcher>().QueryAsync(query));
     }
 }
