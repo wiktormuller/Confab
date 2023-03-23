@@ -3,6 +3,7 @@ using Confab.Modules.Agendas.Application.Agendas.Queries;
 using Confab.Modules.Agendas.Domain.Agendas.Entities;
 using Confab.Modules.Agendas.Infrastructure.EF.Mappings;
 using Confab.Shared.Abstractions.Queries;
+using Confab.Shared.Abstractions.Storage;
 using Microsoft.EntityFrameworkCore;
 
 namespace Confab.Modules.Agendas.Infrastructure.EF.Queries.Handlers;
@@ -10,10 +11,13 @@ namespace Confab.Modules.Agendas.Infrastructure.EF.Queries.Handlers;
 internal sealed class GetAgendaHandler : IQueryHandler<GetAgenda, IEnumerable<AgendaTrackDto>>
 {
     private readonly DbSet<AgendaTrack> _agendaTracks;
+    private readonly IRequestStorage _requestStorage;
 
-    public GetAgendaHandler(AgendasDbContext context)
+    public GetAgendaHandler(AgendasDbContext context,
+        IRequestStorage requestStorage)
     {
         _agendaTracks = context.AgendaTracks;
+        _requestStorage = requestStorage;
     }
 
     public async Task<IEnumerable<AgendaTrackDto>> HandleAsync(GetAgenda query)
@@ -26,6 +30,7 @@ internal sealed class GetAgendaHandler : IQueryHandler<GetAgenda, IEnumerable<Ag
             .ToListAsync();
 
         var dtos = agendaTracks?.Select(at => at.AsDto());
+        _requestStorage.Set(GetStorageKey(query.ConferenceId), dtos, TimeSpan.FromMinutes(5));
 
         return dtos;
     }

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Confab.Shared.Infrastructure.Events;
 
-internal static class Extensions
+public static class Extensions
 {
     public static IServiceCollection AddEvents(this IServiceCollection services, IEnumerable<Assembly> assemblies)
     {

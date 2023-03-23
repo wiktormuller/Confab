@@ -53,8 +53,8 @@ public static class Extensions
                 => Directory.EnumerateFiles(ctx.HostingEnvironment.ContentRootPath,
                     $"module.{pattern}.json", SearchOption.AllDirectories);
         });
-    
-    internal static IServiceCollection AddModuleRequest(this IServiceCollection services, IList<Assembly> assemblies)
+
+    public static IServiceCollection AddModuleRequests(this IServiceCollection services, IList<Assembly> assemblies)
     {
         services.AddModuleRegistry(assemblies);
         services.AddSingleton<IModuleClient, ModuleClient>();

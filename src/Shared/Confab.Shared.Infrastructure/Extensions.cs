@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Confab.Shared.Abstractions.Contexts;
 using Confab.Shared.Abstractions.Modules;
+using Confab.Shared.Abstractions.Storage;
 using Confab.Shared.Abstractions.Time;
 using Confab.Shared.Infrastructure.Api;
 using Confab.Shared.Infrastructure.Auth;
@@ -15,7 +16,10 @@ using Confab.Shared.Infrastructure.Modules;
 using Confab.Shared.Infrastructure.Postgres;
 using Confab.Shared.Infrastructure.Queries;
 using Confab.Shared.Infrastructure.Services;
+using Confab.Shared.Infrastructure.Storage;
 using Confab.Shared.Infrastructure.Time;
+using Convey;
+using Convey.MessageBrokers.RabbitMQ;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
@@ -24,6 +28,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
 [assembly: InternalsVisibleTo("Confab.Bootstrapper")]
+[assembly: InternalsVisibleTo("Confab.Services.Tickets.Core")]
+[assembly: InternalsVisibleTo("Confab.Shared.Tests")]
 namespace Confab.Shared.Infrastructure;
 
 internal static class Extensions
@@ -73,10 +79,12 @@ internal static class Extensions
                     Version = "v1"
                 });
             });
-        
+
+        services.AddMemoryCache();
+        services.AddSingleton<IRequestStorage, RequestStorage>();
         services.AddAuth(modules);
         services.AddModuleInfo(modules);
-        services.AddModuleRequest(assemblies);
+        services.AddModuleRequests(assemblies);
         services.AddSingleton<IContextFactory, ContextFactory>();
         services.AddTransient<IContext>(sp => sp.GetRequiredService<IContextFactory>().Create());
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -110,7 +118,12 @@ internal static class Extensions
                 // Thanks to this setting the bootstrapper can see internal controllers from modules
                 manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
             });
-            
+
+        services
+            .AddConvey()
+            .AddRabbitMq()
+            .Build();
+
         return services;
     }
 

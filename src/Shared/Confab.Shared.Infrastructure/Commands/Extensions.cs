@@ -4,9 +4,9 @@ using System.Reflection;
 
 namespace Confab.Shared.Infrastructure.Commands;
 
-internal static class Extensions
+public static class Extensions
 {
-    internal static IServiceCollection AddCommands(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+    public static IServiceCollection AddCommands(this IServiceCollection services, IEnumerable<Assembly> assemblies)
     {
         services.AddSingleton<ICommandDispatcher, CommandDispatcher>();
         services.Scan(s => s.FromAssemblies(assemblies) // With help of scrutor package register all command handlers
