@@ -29,7 +29,6 @@ internal static class Extensions
     public static IServiceCollection AddCore(this IServiceCollection services)
     {
         var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-
         services.AddAuth();
         services.AddCommands(assemblies);
         services.AddQueries(assemblies);
@@ -52,11 +51,11 @@ internal static class Extensions
 
         return services
             .AddScoped<ITicketService, TicketService>()
-                .AddScoped<ITicketSaleService, TicketSaleService>()
-                .AddScoped<IConferenceRepository, ConferenceRepository>()
-                .AddScoped<ITicketRepository, TicketRepository>()
-                .AddScoped<ITicketSaleRepository, TicketSaleRepository>()
-                .AddSingleton<ITicketGenerator, TicketGenerator>()
-                .AddPostgres<TicketsDbContext>();
+            .AddScoped<ITicketSaleService, TicketSaleService>()
+            .AddScoped<IConferenceRepository, ConferenceRepository>()
+            .AddScoped<ITicketRepository, TicketRepository>()
+            .AddScoped<ITicketSaleRepository, TicketSaleRepository>()
+            .AddSingleton<ITicketGenerator, TicketGenerator>()
+            .AddPostgres<TicketsDbContext>();
     }
 }

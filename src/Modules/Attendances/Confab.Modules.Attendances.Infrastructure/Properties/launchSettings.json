@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Confab.Modules.Attendances.Infrastructure": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:56227;http://localhost:56228"
+    }
+  }
+}
